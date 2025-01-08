@@ -26,7 +26,7 @@ function Hero() {
         data-aos="fade-up"
       >
         <h1 className="w-[95%] text-3xl sm:text-3xl md:text-4xl font-bold mb-6 ">
-          I'm<span className="textcolor"> Marcelo Rodrigo,</span> <br />{" "}
+          I'm<span className="textcolor "> Marcelo Rodrigo,</span> <br />{" "}
           <span className="text-4xl mt-2 " style={{ whiteSpace: "nowrap" }}>
             Android and Web Developer
           </span>
@@ -42,10 +42,13 @@ function Hero() {
 
         {/* LinkedIn & Github logo */}
         <div className="w-full flex justify-center lg:justify-start items-center mt-4">
-          <a href="https://www.linkedin.com/in/lucky-thakur-533628258/">
+          <a
+            href="https://www.linkedin.com/in/marcelo-rodrigo-205100295/"
+            target="_blank"
+          >
             <BiLogoLinkedin className="text-2xl" />
           </a>
-          <a href="https://github.com/luckythakur00">
+          <a href="https://github.com/rodrigomarcelo643" target="_blank">
             <BiLogoGithub className="text-2xl mx-2" />
           </a>
         </div>
@@ -59,7 +62,8 @@ function Hero() {
             duration={500}
             className="btn h-10 w-36 mt-5 m-auto lg:ml-0 rounded-md flex justify-center items-center text-base font-semibold bg-[rgb(19,118,175)] text-white cursor-pointer"
           >
-            Message Me <BiArrowBack className="text-xl font-bold ml-2" />{" "}
+            Contact Me
+            <BiArrowBack className="text-xl font-bold ml-2" />{" "}
           </Link>
         </div>
       </div>

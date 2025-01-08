@@ -32,22 +32,26 @@ function Footer() {
               <a
                 href="https://www.linkedin.com/in/marcelo-rodrigo-205100295/"
                 className="text-xl"
+                target="_blank"
               >
                 <BiLogoLinkedin />
               </a>
               <a
                 href="https://github.com/rodrigomarcelo643"
                 className="text-xl"
+                target="_blank"
               >
                 <BiLogoGithub />
               </a>
               <a
                 href="https://www.instagram.com/yourusername"
+                target="_blank"
                 className="text-xl"
               >
                 <BiLogoInstagram />
               </a>
               <a
+                target="_blank"
                 href="https://www.instagram.com/rodrigomarcelo643/#"
                 className="text-xl"
               >

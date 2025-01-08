@@ -14,7 +14,7 @@ function About() {
       duration: 1000, // Duration of the animation
       easing: "ease-out", // Easing for smooth animation
       once: false, // Trigger animation every time the element comes into view
-      offset: 100, // Offset to start animation a bit earlier
+      offset: 100,
     });
   }, []);
 
@@ -24,7 +24,9 @@ function About() {
       className="h-full w-full mt-20 md:mt-6 lg:mt-2 text-white"
     >
       <div className="relative">
-        <h1 className="text-4xl md:text-6xl text-center font-bold">About Me</h1>
+        <h1 className="text-4xl md:text-6xl text-center font-bold">
+          About Me{" "}
+        </h1>
         <BiCross className="animate-spin text-5xl absolute -bottom-10 right-10" />
         <BiCross className="animate-bounce text-3xl absolute -bottom-96" />
       </div>

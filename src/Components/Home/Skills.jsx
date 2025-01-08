@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BiCodeAlt,
   BiServer,
@@ -69,6 +69,7 @@ function Skills() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
 
   const nextSkill = () => {
     setCurrentIndex((prevIndex) =>
@@ -82,8 +83,30 @@ function Skills() {
     );
   };
 
+  useEffect(() => {
+    if (!isUserInteracting) {
+      const interval = setInterval(() => {
+        nextSkill();
+      }, 2000); // Autoplay every 3 seconds
+      return () => clearInterval(interval);
+    }
+  }, [isUserInteracting, currentIndex]);
+
+  const handleUserInteraction = () => {
+    setIsUserInteracting(true);
+    const timer = setTimeout(() => {
+      setIsUserInteracting(false);
+    }, 5000); // Resume autoplay after 5 seconds of inactivity
+    return () => clearTimeout(timer);
+  };
+
   return (
-    <div id="skills" className="h-full w-full mt-20 md:mt-6 lg:mt-2 text-white">
+    <div
+      id="skills"
+      className="h-full w-full mt-20 md:mt-6 lg:mt-2 text-white"
+      onMouseMove={handleUserInteraction}
+      onTouchStart={handleUserInteraction}
+    >
       <div className="relative">
         <h1 className="text-4xl md:text-6xl text-center mt-20 font-bold">
           Skills
@@ -99,7 +122,7 @@ function Skills() {
           <img src={PrevIcon} className="w-6 h-6 md:w-8 md:h-8" />
         </button>
 
-        {/* Skills Container with Scrolling Effect */}
+        {/* Skills Container */}
         <div
           className="w-full flex justify-center items-center space-x-6 h-[280px] overflow-auto scroll-smooth"
           style={{ scrollBehavior: "smooth" }}

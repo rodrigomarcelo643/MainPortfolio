@@ -4,6 +4,7 @@ import project1 from "../../assets/youtubeClone.png";
 import project2 from "../../assets/Expense-Tracker.png";
 import project3 from "../../assets/currencyConvertor.png";
 import project4 from "../../assets/Portfolio.png";
+import comingSoon from "../../assets/coming-soon.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -170,12 +171,20 @@ function LatestWork() {
 
       {/* Modal */}
       {modalVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold">This will be displayed soon</h2>
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-60 z-50">
+          <div className="bg-white text-black text-center p-6 sm:p-8 rounded-lg shadow-2xl max-w-xs sm:max-w-md w-full mx-4 sm:mx-0">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4">Coming Soon!</h2>
+            <p className="text-gray-700 text-sm sm:text-base mb-6">
+              Stay tuned for something amazing.
+            </p>
+            <img
+              src={comingSoon}
+              alt="Coming Soon"
+              className="mx-auto w-24 h-24 sm:w-36 sm:h-36 object-contain mb-6"
+            />
             <button
               onClick={closeModal}
-              className="mt-4 text-sm text-red-600 underline"
+              className="mt-4 px-6 py-2 bg-red-600 text-white text-sm sm:text-base font-semibold rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 transition-all"
             >
               Close
             </button>

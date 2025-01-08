@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import menuopen from "../assets/menu_open.svg";
+
 import { Link } from "react-scroll";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 
 function Header({ setSideBar }) {
   const [headervalue, setHeaderValue] = useState("home");
@@ -40,7 +41,7 @@ function Header({ setSideBar }) {
       {/* Logo */}
       <Link to="home" className="" smooth={true} offset={-60} duration={500}>
         <div
-          className="textanimation h-full text-xl md:text-lg lg:text-3xl font-semibold cursor-pointer"
+          className="textanimation  flex h-full text-xl md:text-lg lg:text-3xl font-semibold cursor-pointer"
           data-aos="zoom-in"
           data-aos-delay="300"
         >
