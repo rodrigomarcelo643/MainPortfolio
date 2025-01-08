@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BiCircle, BiStar } from "react-icons/bi";
 import project1 from "../../assets/youtubeClone.png";
 import project2 from "../../assets/Expense-Tracker.png";
 import project3 from "../../assets/currencyConvertor.png";
 import project4 from "../../assets/Portfolio.png";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 
 function LatestWork() {
+  const [modalVisible, setModalVisible] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Duration of the animation
@@ -16,15 +18,25 @@ function LatestWork() {
       offset: 100, // Offset to start animation a bit earlier
     });
   }, []);
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   return (
-    <div id="latestwork" className="relative m-auto mt-10 mb-2">
+    <div id="latestwork" className="relative m-auto mt-10 mb-2  rounded-lg">
       <div className="m-auto text-center relative">
-        <h1 className="text-3xl md:text-5xl font-semibold py-7">Latest Work</h1>
-        <BiStar className="animate-spin text-2xl absolute bottom-0" />
+        <h1 className="text-3xl md:text-5xl font-semibold py-7 text-white">
+          Latest Work
+        </h1>
+        <BiStar className="animate-spin text-2xl absolute bottom-0 text-white" />
       </div>
-      <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10" />
-      <BiCircle className="text-4xl animate-pulse absolute bottom-6 right-10" />
+      <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10 text-white" />
+      <BiCircle className="text-4xl animate-pulse absolute bottom-6 right-10 text-white" />
 
       <div className="min-h-96 w-full xl:w-11/12 m-auto flex flex-wrap justify-between items-start">
         {/* First box */}
@@ -42,7 +54,7 @@ function LatestWork() {
               alt="YouTube Clone"
             />
           </a>
-          <div className="h-[40%] w-full lg:w-1/2 pl-4 lg:pl-2">
+          <div className="h-[40%] w-full lg:w-1/2 pl-4 lg:pl-2 text-white">
             <h1 className="text-base font-semibold pb-1">You Tube Clone</h1>
             <p>
               This project is a YouTube clone built using React.js, Tailwind
@@ -51,14 +63,8 @@ function LatestWork() {
             </p>
             <div className="flex justify-start items-center my-2">
               <a
-                href="https://github.com/luckythakur00/You-Tube-Clone"
-                className="h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 btn rounded-full"
-              >
-                View Code
-              </a>
-              <a
-                href="https://lucky-you-tube-clone.netlify.app/"
-                className="h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 btn ml-2 rounded-full"
+                onClick={handleOpenModal}
+                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-[rgb(19,118,175)]  rounded-full cursor-pointer"
               >
                 View Live
               </a>
@@ -81,7 +87,7 @@ function LatestWork() {
               alt="Expense Tracker"
             />
           </a>
-          <div className="h-[40%] w-full lg:w-1/2 pl-4 lg:pl-2">
+          <div className="h-[40%] w-full lg:w-1/2 pl-4 lg:pl-2 text-white">
             <h1 className="text-base font-semibold pb-1">Expense Tracker</h1>
             <p>
               This is a responsive Expense Tracker built with React.js and
@@ -89,14 +95,8 @@ function LatestWork() {
             </p>
             <div className="flex justify-start items-center my-2">
               <a
-                href="https://github.com/luckythakur00/Expense-Tracker"
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 rounded-full"
-              >
-                View Code
-              </a>
-              <a
-                href="https://expense-tracker-inreact.netlify.app/"
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 ml-2 rounded-full"
+                onClick={handleOpenModal}
+                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-[rgb(19,118,175)]  rounded-full cursor-pointer"
               >
                 View Live
               </a>
@@ -116,7 +116,7 @@ function LatestWork() {
               alt="Portfolio Website"
             />
           </a>
-          <div className="h-[50%] w-full lg:w-1/2 pl-4 lg:pl-2">
+          <div className="h-[50%] w-full lg:w-1/2 pl-4 lg:pl-2 text-white">
             <h1 className="text-base font-semibold pb-1">Portfolio Website</h1>
             <p>
               A fully responsive portfolio built with React.js and Tailwind CSS.
@@ -125,14 +125,8 @@ function LatestWork() {
             </p>
             <div className="flex justify-start items-center my-2">
               <a
-                href="https://github.com/luckythakur00/Portfolio"
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 rounded-full"
-              >
-                View Code
-              </a>
-              <a
-                href=""
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 ml-2 rounded-full"
+                onClick={handleOpenModal}
+                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-[rgb(19,118,175)] rounded-full cursor-pointer"
               >
                 View Live
               </a>
@@ -140,7 +134,7 @@ function LatestWork() {
           </div>
         </div>
 
-        {/* Forth box */}
+        {/* Fourth box */}
         <div
           className="h-96 w-96 sm:w-[48%] lg:h-64 m-auto rounded-lg flex flex-col lg:flex-row lg:pt-2 mb-8 sm:mb-4"
           data-aos="fade-up" // Animation effect: fade-up
@@ -155,7 +149,7 @@ function LatestWork() {
               alt="Currency Converter"
             />
           </a>
-          <div className="h-[50%] w-full lg:w-1/2 pl-4 lg:pl-2">
+          <div className="h-[50%] w-full lg:w-1/2 pl-4 lg:pl-2 text-white">
             <h1 className="text-base font-semibold pb-1">Currency Convertor</h1>
             <p>
               This Currency Converter app is built using React.js and Tailwind
@@ -164,14 +158,8 @@ function LatestWork() {
             </p>
             <div className="flex justify-start items-center my-2">
               <a
-                href="https://github.com/luckythakur00/Currency-Converter"
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 rounded-full"
-              >
-                View Code
-              </a>
-              <a
-                href="https://currencyconvertorrapp.netlify.app/"
-                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-purple-700 ml-2 rounded-full"
+                onClick={handleOpenModal}
+                className="btn h-8 w-24 pt-1.5 text-sm text-center bg-[rgb(19,118,175)]  rounded-full cursor-pointer"
               >
                 View Live
               </a>
@@ -179,6 +167,21 @@ function LatestWork() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {modalVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-bold">This will be displayed soon</h2>
+            <button
+              onClick={closeModal}
+              className="mt-4 text-sm text-red-600 underline"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

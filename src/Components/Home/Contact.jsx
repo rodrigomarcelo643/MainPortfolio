@@ -34,6 +34,7 @@ function Contact() {
         pauseOnHover: false,
         theme: "dark",
       });
+      form.reset();
     }
   };
 
@@ -43,7 +44,7 @@ function Contact() {
         <h1
           className="text-3xl md:text-5xl font-semibold py-7"
           data-aos="fade-up" // Fade in animation for the title
-          data-aos-delay="200"
+          data-aos-delay="300"
         >
           Get in Touch
         </h1>
@@ -53,22 +54,22 @@ function Contact() {
       <BiCircle
         className="text-5xl animate-pulse absolute bottom-1 left-0 sm:bottom-24 sm:left-10"
         data-aos="fade-up" // Animation for circles
-        data-aos-delay="400"
+        data-aos-delay="300"
       />
       <BiCircle
         className="text-4xl animate-pulse absolute bottom-0 left-6 sm:bottom-20 sm:left-14"
         data-aos="fade-up" // Animation for circles
-        data-aos-delay="500"
+        data-aos-delay="300"
       />
       <BiCross
         className="text-xl animate-spin absolute right-10"
         data-aos="fade-left" // Animation for crosses
-        data-aos-delay="600"
+        data-aos-delay="300"
       />
       <BiCross
         className="text-4xl animate-spin absolute right-10 bottom-2"
         data-aos="fade-left" // Animation for crosses
-        data-aos-delay="700"
+        data-aos-delay="300"
       />
 
       <div className="flex flex-col sm:flex-row justify-between md:px-10">
@@ -76,7 +77,7 @@ function Contact() {
         <div
           className="sm:w-3/5 lg:w-1/2 sm:pt-8 text-center sm:text-start"
           data-aos="fade-right" // Right animation for the left section
-          data-aos-delay="600"
+          data-aos-delay="300"
         >
           <p className="text-sm sm:text-base sm:w-11/12 lg:w-3/4 pb-10 sm:py-4">
             <span className="font-bold text-lg">Greetings,</span>
@@ -98,12 +99,12 @@ function Contact() {
               alt="mail"
               className="h-3 w-10 mt-1 cursor-pointer"
               data-aos="fade-left" // Animation for mail icon
-              data-aos-delay="400"
+              data-aos-delay="300"
             />
             <p
               className="sm:px-2 text-sm cursor-pointer"
               data-aos="fade-left"
-              data-aos-delay="500"
+              data-aos-delay="300"
             >
               rodrigomarcelo643@gmail.com
             </p>
@@ -114,12 +115,12 @@ function Contact() {
               alt="call"
               className="h-4 w-10 mt-1 cursor-pointer"
               data-aos="fade-left" // Animation for call icon
-              data-aos-delay="600"
+              data-aos-delay="300"
             />
             <p
               className="sm:px-2 text-sm cursor-pointer"
               data-aos="fade-left"
-              data-aos-delay="600"
+              data-aos-delay="300"
             >
               09533341454
             </p>
@@ -130,12 +131,12 @@ function Contact() {
               alt="location"
               className="h-4 w-10 mt-1 cursor-pointer"
               data-aos="fade-left" // Animation for location icon
-              data-aos-delay="600"
+              data-aos-delay="300"
             />
             <p
               className="sm:px-2 text-sm cursor-pointer"
               data-aos="fade-left"
-              data-aos-delay="600"
+              data-aos-delay="300"
             >
               Caliongan, Dalaguete , Cebu
             </p>
@@ -147,7 +148,7 @@ function Contact() {
           onSubmit={onSubmit}
           className="sm:w-2/5 lg:w-1/2 mt-10 sm:mt-0"
           data-aos="fade-left" // Left animation for the form section
-          data-aos-delay="600"
+          data-aos-delay="300"
         >
           <div className="flex flex-col">
             <label htmlFor="" className="sm:py-4 text-base">

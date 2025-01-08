@@ -25,9 +25,11 @@ function Hero() {
         className="w-full lg:w-1/2 xl:w-2/5 text-center lg:text-start"
         data-aos="fade-up"
       >
-        <h1 className="w-[95%] text-3xl sm:text-4xl md:text-4xl font-bold mb-6 ">
-          I'm<span className="textcolor"> Marcelo Rodrigo,</span> <br /> Android
-          Developer and Web Developer
+        <h1 className="w-[95%] text-3xl sm:text-3xl md:text-4xl font-bold mb-6 ">
+          I'm<span className="textcolor"> Marcelo Rodrigo,</span> <br />{" "}
+          <span className="text-4xl mt-2 " style={{ whiteSpace: "nowrap" }}>
+            Android and Web Developer
+          </span>
         </h1>
         <p className="text-sm md:w-10/12 m-auto lg:w-auto text-gray-400">
           I am fueled by a deep passion for innovation and problem-solving,
