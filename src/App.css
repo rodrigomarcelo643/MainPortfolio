@@ -1,0 +1,123 @@
+body {
+  font-family: monospace;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(156, 153, 153);
+  border-radius: 5px;
+}
+/* This is for background color. Home.jsx */
+.fullbackgroundcolor {
+  background-image: linear-gradient(
+    45deg,
+    black 30%,
+    rgb(70, 47, 97),
+    black 60%
+  );
+}
+
+/* This is for texy color. Hero.jsx */
+.textcolor {
+  background: linear-gradient(
+    267deg,
+    rgb(19, 118, 175) 10%,
+    rgb(74, 152, 197) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* This is for all the buttons */
+.btn {
+  transition: 0.5s;
+}
+.btn:hover {
+  transform: scale(1.08);
+  background-color: rgb(19, 118, 175);
+}
+
+/* Header.jsx */
+.headerBtn {
+  transition: 0.5s;
+}
+.headerBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Text animation in Header.jsx */
+.textanimation {
+  font-family: monospace;
+  letter-spacing: 5px;
+  border-right: 5px solid white;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(12), cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+/* Header.jsx */
+.solidunderline::before {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: rgb(19, 118, 175);
+  position: absolute;
+  bottom: 10px;
+}
+.underlinearrow:hover:before {
+  content: "";
+  height: 3px;
+  width: 0;
+  background-color: rgb(19, 118, 175);
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  animation: move 2s ease-in-out infinite;
+}
+@keyframes move {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+/* AboutUs.jsx box */
+.box {
+  transition: 0.5s;
+  backdrop-filter: blur(100px);
+}
+.box:hover {
+  transform: scale(1.08);
+  box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.32);
+}
+
+/* For Project Image (LatestWork.jsx) */
+.project {
+  transition: 0.5s;
+}
+.project:hover {
+  transform: scale(1.05);
+}
+
+/* This is for sideBar (SideBar.jsx) */
+.sidebarbgcolor {
+  background-image: linear-gradient(90deg, rgb(19, 118, 175), black 50%);
+}
