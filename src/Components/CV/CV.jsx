@@ -153,7 +153,7 @@ const CV = () => {
           onClick={goBackToPortfolio}
           className="px-5 py-2  border-2  border-[rgb(19,118,175)] hover:bg-gray-200  hover:text-black text-md font-medium rounded-full flex items-center gap-2 text-white  transition-all"
         >
-          <HiChevronLeft className="text-xl" /> Back to Portfolio
+          <HiChevronLeft className="text-xl" /> Back
         </button>
         <button
           onClick={handleDownloadPDF}

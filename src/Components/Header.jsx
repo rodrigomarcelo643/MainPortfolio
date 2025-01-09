@@ -128,7 +128,7 @@ function Header({ setSideBar }) {
               style={{
                 position: "absolute",
                 top: "50%",
-                left: "80%", // Position dropdown to the right
+                left: "80%",
               }}
             >
               <Link
