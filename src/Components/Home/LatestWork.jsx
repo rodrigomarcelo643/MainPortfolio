@@ -89,7 +89,7 @@ function LatestWork() {
       description:
         "This is a responsive apartment booking application built with React.js and Tailwind CSS, featuring seamless apartment reservations and integrated chat functionality for communication between tenants and landlords.",
       img: project4,
-      liveLink: "",
+      liveLink: "https://balaga-unit-iof9.vercel.app",
       features: [
         "Real-time data updates.",
         "Category-based expense tracking.",
