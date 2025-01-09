@@ -77,10 +77,10 @@ function Projects() {
       </div>
 
       {/* Back Button with Chevron Icon on Left */}
-      <div className="absolute top-5 left-5">
+      <div className="absolute top-[100px] left-5">
         <Link
           to="/"
-          className="bg-blue-500 mt-10 text-white px-4 ml-[45px] py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
+          className="bg-blue-500 mt-70 text-white px-4 p-[40px] py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
         >
           <BiChevronLeft className="mr-2 text-lg" />
           Back
@@ -88,7 +88,7 @@ function Projects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="min-h-96 w-full xl:w-11/12 m-auto flex flex-wrap justify-between items-start">
+      <div className="min-h-96 mt-[50px] w-full xl:w-11/12 m-auto flex flex-wrap justify-between items-start">
         {projects.map((project) => (
           <div
             key={project.id}
