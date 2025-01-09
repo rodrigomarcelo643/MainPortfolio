@@ -42,7 +42,7 @@ function Header({ setSideBar }) {
   }, []);
 
   return (
-    <div className="h-14 w-full flex justify-between py-2 px-2 lg:px-10 xl:px-14 fixed z-30 bg-black text-white">
+    <div className="h-14 sm:w-10 w-full flex justify-between py-2 px-2 lg:px-10  sm:px-5 xl:px-14 fixed z-30 bg-black text-white">
       {/* Logo */}
       <Link to="home" smooth={true} offset={-60} duration={500}>
         <div
@@ -198,7 +198,7 @@ function Header({ setSideBar }) {
       {/* Menu Icon */}
       <img
         onClick={() => setSideBar(true)}
-        className="h-10 w-10 md:h-0 md:w-0 absolute right-4 visible md:invisible cursor-pointer"
+        className="h-6 w-12 md:h-0 md:w-0 absolute right-4 visible md:invisible cursor-pointer"
         src={menuopen}
         alt="Menu"
         data-aos="flip-left"
