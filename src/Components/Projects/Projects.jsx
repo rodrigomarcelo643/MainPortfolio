@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { BiCircle, BiStar } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { BiChevronLeft, BiCircle, BiStar } from "react-icons/bi";
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/som.jpg";
 import project3 from "../../assets/ordering-system.jpg";
 import project4 from "../../assets/balaga.jpg";
 import comingSoon from "../../assets/coming-soon.gif";
-import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function LatestWork() {
+function Projects() {
   const [modalVisible, setModalVisible] = useState(false);
   const [expandedProject, setExpandedProject] = useState(null);
-  const navigate = useNavigate();
 
-  const navigateToProjects = () => {
-    navigate("/my-projects");
-  };
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -26,33 +22,14 @@ function LatestWork() {
     });
   }, []);
 
-  const handleOpenModal = () => {
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-
-  const toggleFeatures = (projectId) => {
-    setExpandedProject((prev) => (prev === projectId ? null : projectId));
-  };
-
   const projects = [
     {
       id: 1,
-      title: "Yokoks Gym ",
+      title: "Yokoks Gym",
       description:
         "Gym inventory and membership management system built with React.js, Tailwind CSS, and Context API, featuring an intuitive interface for managing equipment, memberships, and administrative tasks.",
       img: project1,
       liveLink: "https://lemonchiffon-ape-979463.hostingersite.com/p/L.php",
-      features: [
-        "Responsive design with Tailwind CSS.",
-        "Member and equipment management using PHP.",
-        "Real-time updates and search with JavaScript.",
-        "Membership plans and payment tracking.",
-        "Dark mode toggle for usability.",
-      ],
     },
     {
       id: 2,
@@ -61,13 +38,6 @@ function LatestWork() {
         "A responsive system for managing student requirements, including file uploads, folder organization for administrators, grade sheets, and announcement settings.",
       img: project2,
       liveLink: "",
-      features: [
-        "Real-time file upload and organization.",
-        "Administrator tools for managing folders and grades.",
-        "Student grade sheet integration.",
-        "Announcement creation and management.",
-        "Dark mode support.",
-      ],
     },
     {
       id: 3,
@@ -76,12 +46,6 @@ function LatestWork() {
         "This project is a Java-based ordering system with a user-friendly GUI, enabling users to place orders and administrators to manage sales and customer information efficiently.",
       img: project3,
       liveLink: "",
-      features: [
-        "Responsive design with Tailwind CSS.",
-        "API integration for fetching video content.",
-        "Dynamic search functionality.",
-        "Dark mode toggle.",
-      ],
     },
     {
       id: 4,
@@ -90,34 +54,40 @@ function LatestWork() {
         "This is a responsive apartment booking application built with React.js and Tailwind CSS, featuring seamless apartment reservations and integrated chat functionality for communication between tenants and landlords.",
       img: project4,
       liveLink: "",
-      features: [
-        "Real-time data updates.",
-        "Category-based expense tracking.",
-        "Interactive charts for insights.",
-        "Dark mode support.",
-      ],
     },
   ];
 
+  const handleOpenModal = (projectId) => {
+    setExpandedProject(projectId);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+    setExpandedProject(null);
+  };
+
   return (
-    <div id="latestwork" className="relative m-auto mt-10 mb-2 rounded-lg">
-      <div className="m-auto text-center relative">
+    <div id="projects" className="relative m-auto mt-[-30px] mb-2 rounded-lg">
+      <div className="text-center relative mb-6">
         <h1 className="text-3xl md:text-5xl font-semibold py-7 text-white">
-          Latest Work
+          My Projects
         </h1>
-        <BiStar className="animate-spin text-2xl absolute bottom-0 text-white" />
+        <BiStar className="animate-spin text-2xl absolute top-0 left-1/2 transform -translate-x-1/2 text-white" />
       </div>
 
-      <button
-        onClick={navigateToProjects}
-        className="absolute top-5 right-5 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
-      >
-        View All Projects
-      </button>
+      {/* Back Button with Chevron Icon on Left */}
+      <div className="absolute top-5 left-5">
+        <Link
+          to="/"
+          className="bg-blue-500 mt-10 text-white px-4 ml-[45px] py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
+        >
+          <BiChevronLeft className="mr-2 text-lg" />
+          Back
+        </Link>
+      </div>
 
-      <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10 text-white" />
-      <BiCircle className="text-4xl animate-pulse absolute bottom-6 right-10 text-white" />
-
+      {/* Projects Grid */}
       <div className="min-h-96 w-full xl:w-11/12 m-auto flex flex-wrap justify-between items-start">
         {projects.map((project) => (
           <div
@@ -132,7 +102,7 @@ function LatestWork() {
               rel="noopener noreferrer"
             >
               <img
-                className="project h-[92%] w-full m-auto duration-300 rounded-lg"
+                className="h-[92%] w-full m-auto duration-300 rounded-lg"
                 src={project.img}
                 alt={project.title}
               />
@@ -142,7 +112,7 @@ function LatestWork() {
               <p>{project.description}</p>
               <div className="flex justify-start items-center my-2">
                 <button
-                  onClick={handleOpenModal}
+                  onClick={() => handleOpenModal(project.id)}
                   className="btn h-8 w-24  text-sm text-center border-2  border-[rgb(19,118,175)] rounded-[6px] cursor-pointer mr-2"
                 >
                   View Live
@@ -178,8 +148,12 @@ function LatestWork() {
           </div>
         </div>
       )}
+
+      {/* Decorative Circles */}
+      <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10 text-white" />
+      <BiCircle className="text-4xl animate-pulse absolute bottom-6 right-10 text-white" />
     </div>
   );
 }
 
-export default LatestWork;
+export default Projects;

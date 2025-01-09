@@ -122,3 +122,53 @@ body {
 .sidebarbgcolor {
   background-image: linear-gradient(90deg, rgb(19, 118, 175), black 50%);
 }
+.bullet-link {
+  position: relative;
+}
+
+.bullet-link::before {
+  content: "";
+  position: absolute;
+  left: -16px; /* Adjust as necessary */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px; /* Size of the bullet */
+  height: 8px;
+  background-color: white; /* Bullet color */
+  border-radius: 50%; /* Makes it a circle */
+}
+/* Style the container for bullets */
+.skill-container {
+  position: relative;
+}
+
+.skill-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 0; /* Align dots at the bottom */
+  z-index: 20;
+  padding-bottom: 1.5rem;
+}
+
+/* General Bullet Style */
+.skill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6); /* Inactive state */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active Dot Style */
+.skill-dot.active {
+  background-color: #3b82f6; /* Blue active color */
+  transform: scale(1.5); /* Larger size for active dot */
+}
+
+/* Hover effect for dots */
+.skill-dot:hover {
+  transform: scale(1.3);
+  background-color: #2563eb; /* Blue hover color */
+}

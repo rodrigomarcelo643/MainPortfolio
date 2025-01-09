@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { BiArrowBack, BiLogoGithub, BiLogoLinkedin } from "react-icons/bi";
+import {
+  BiArrowBack,
+  BiLogoGithub,
+  BiLogoLinkedin,
+  BiLogoInstagram,
+  BiLogoFacebook,
+} from "react-icons/bi";
 import arrowicon from "../../assets/arrow_icon.svg";
 import mailicon from "../../assets/mail_icon.svg";
 import { Link } from "react-scroll";
@@ -18,16 +24,19 @@ function Hero() {
   return (
     <div
       id="home"
-      className="flex flex-col-reverse lg:flex-row justify-around items-center pt-0 sm:pt-10 lg:py-36"
+      className="flex flex-col-reverse lg:flex-row justify-between items-center pt-10 md:pt-20 lg:py-36"
     >
       {/* Left side */}
       <div
-        className="w-full lg:w-1/2 xl:w-2/5 text-center lg:text-start"
+        className="w-full lg:w-1/2 xl:w-2/5 text-center lg:text-start px-4 md:px-8"
         data-aos="fade-up"
       >
-        <h1 className="w-[95%] text-3xl sm:text-3xl md:text-4xl font-bold mb-6 ">
-          I'm<span className="textcolor "> Marcelo Rodrigo,</span> <br />{" "}
-          <span className="text-4xl mt-2 " style={{ whiteSpace: "nowrap" }}>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold mb-6">
+          I'm<span className="textcolor "> Marcelo Rodrigo,</span> <br />
+          <span
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl mt-2"
+            style={{ whiteSpace: "nowrap" }}
+          >
             Android and Web Developer
           </span>
         </h1>
@@ -41,29 +50,48 @@ function Hero() {
         </p>
 
         {/* LinkedIn & Github logo */}
-        <div className="w-full flex justify-center lg:justify-start items-center mt-4">
+        <div className="w-full flex justify-center lg:justify-start items-center mt-4 space-x-6">
           <a
             href="https://www.linkedin.com/in/marcelo-rodrigo-205100295/"
             target="_blank"
+            className="text-xl hover:text-blue-600 transition duration-200"
           >
-            <BiLogoLinkedin className="text-2xl" />
+            <BiLogoLinkedin />
           </a>
-          <a href="https://github.com/rodrigomarcelo643" target="_blank">
-            <BiLogoGithub className="text-2xl mx-2" />
+          <a
+            href="https://github.com/rodrigomarcelo643"
+            target="_blank"
+            className="text-xl hover:text-gray-700 transition duration-200"
+          >
+            <BiLogoGithub />
+          </a>
+          <a
+            href="https://www.instagram.com/rodrigomarcelo643/#"
+            target="_blank"
+            className="text-xl hover:text-pink-600 transition duration-200"
+          >
+            <BiLogoInstagram />
+          </a>
+          <a
+            href="https://web.facebook.com/marcelo.rodrigo.93815"
+            target="_blank"
+            className="text-xl hover:text-blue-500 transition duration-200"
+          >
+            <BiLogoFacebook />
           </a>
         </div>
 
         {/* Contact me button */}
-        <div className="w-full">
+        <div className="w-full mt-5 md:mt-8">
           <Link
             to="contact"
             smooth={true}
             offset={-80}
             duration={500}
-            className="btn h-10 w-36 mt-5 m-auto lg:ml-0 rounded-md flex justify-center items-center text-base font-semibold bg-[rgb(19,118,175)] text-white cursor-pointer"
+            className="btn h-10 w-36 rounded-md flex justify-center items-center text-base font-semibold bg-[rgb(19,118,175)] text-white cursor-pointer"
           >
             Contact Me
-            <BiArrowBack className="text-xl font-bold ml-2" />{" "}
+            <BiArrowBack className="text-xl font-bold ml-2" />
           </Link>
         </div>
       </div>

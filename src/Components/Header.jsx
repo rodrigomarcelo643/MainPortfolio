@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
-import menuopen from "../assets/menu_open.svg";
-
 import { Link } from "react-scroll";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid"; // Corrected import
+import menuopen from "../assets/menu_open.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Header({ setSideBar }) {
   const [headervalue, setHeaderValue] = useState("home");
+  const [isSkillsHovered, setIsSkillsHovered] = useState(false);
 
   useEffect(() => {
     AOS.init({
       duration: 1500,
-      easing: "ease-out-back", // Playful easing for bounce effect
-      once: false, // Animation happens every time the element comes into view
-      offset: 100, // Start animations a bit earlier to be more dynamic
+      easing: "ease-out-back",
+      once: false,
+      offset: 100,
     });
 
-    // Intersection Observer to detect when sections come into view
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setHeaderValue(entry.target.id); // Set active section
+            setHeaderValue(entry.target.id);
           }
         });
       },
@@ -39,9 +39,9 @@ function Header({ setSideBar }) {
   return (
     <div className="h-14 w-full flex justify-between py-2 px-2 lg:px-10 xl:px-14 fixed z-30 bg-black text-white">
       {/* Logo */}
-      <Link to="home" className="" smooth={true} offset={-60} duration={500}>
+      <Link to="home" smooth={true} offset={-60} duration={500}>
         <div
-          className="textanimation  flex h-full text-xl md:text-lg lg:text-3xl font-semibold cursor-pointer"
+          className="textanimation flex h-full text-xl md:text-lg lg:text-3xl font-semibold cursor-pointer"
           data-aos="zoom-in"
           data-aos-delay="300"
         >
@@ -51,7 +51,7 @@ function Header({ setSideBar }) {
 
       {/* All Header Buttons */}
       <div
-        className="h-0 w-0 md:h-auto md:w-auto invisible md:visible flex"
+        className="h-0 w-0 md:h-auto mt-[4px] md:w-auto invisible md:visible flex"
         data-aos="fade-up"
         data-aos-delay="500"
       >
@@ -83,7 +83,13 @@ function Header({ setSideBar }) {
             About Me
           </Link>
         </li>
-        <li className="headerBtn text-base list-none relative md:ml-5 lg:ml-12">
+
+        {/* Skills Dropdown with Chevron */}
+        <li
+          className="headerBtn flex text-base list-none relative md:ml-5 lg:ml-12"
+          onMouseEnter={() => setIsSkillsHovered(true)}
+          onMouseLeave={() => setIsSkillsHovered(false)}
+        >
           <Link
             to="skills"
             onClick={() => setHeaderValue("skills")}
@@ -96,7 +102,64 @@ function Header({ setSideBar }) {
           >
             Skills
           </Link>
+
+          {/* Chevron Icon for Skills */}
+          {isSkillsHovered ? (
+            <ChevronUpIcon
+              className="w-4 h-4 mt-[5px] text-white ml-[2.5px] cursor-pointer"
+              onClick={() => setIsSkillsHovered(false)}
+            />
+          ) : (
+            <ChevronDownIcon
+              className="w-4 h-4 mt-[5px] text-white ml-[2.5px] cursor-pointer"
+              onClick={() => setIsSkillsHovered(true)}
+            />
+          )}
+
+          {/* Dropdown Menu */}
+          {isSkillsHovered && (
+            <div
+              className="absolute bg-gray-800 text-white py-2 px-4 rounded-[10px] shadow-lg mt-2 w-[250px] z-50"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "80%", // Position dropdown to the right
+              }}
+            >
+              <Link
+                to="webskills"
+                onClick={() => setHeaderValue("webskills")}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                className="block py-2 px-4 rounded-[10px] hover:bg-gray-600 cursor-pointer"
+              >
+                Web Development
+              </Link>
+              <Link
+                to="tools"
+                onClick={() => setHeaderValue("tools")}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                className="block py-2 px-4 rounded-[10px] hover:bg-gray-600 cursor-pointer"
+              >
+                Android Development
+              </Link>
+              <Link
+                to="tools"
+                onClick={() => setHeaderValue("tools")}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                className="block py-2 px-4 rounded-[10px] hover:bg-gray-600 cursor-pointer"
+              >
+                Tools & Technologies
+              </Link>
+            </div>
+          )}
         </li>
+
         <li className="headerBtn text-base list-none relative md:ml-5 lg:ml-12">
           <Link
             to="latestwork"

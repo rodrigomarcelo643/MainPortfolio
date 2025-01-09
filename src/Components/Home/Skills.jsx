@@ -70,16 +70,35 @@ function Skills() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const [cardsToShow, setCardsToShow] = useState(1);
+
+  const updateCardsToShow = () => {
+    if (window.innerWidth >= 1024) {
+      setCardsToShow(3); // For larger screens, show 3 cards
+    } else if (window.innerWidth >= 768) {
+      setCardsToShow(2); // For medium screens, show 2 cards
+    } else {
+      setCardsToShow(1); // For smaller screens, show 1 card
+    }
+  };
+
+  useEffect(() => {
+    updateCardsToShow();
+    window.addEventListener("resize", updateCardsToShow);
+    return () => {
+      window.removeEventListener("resize", updateCardsToShow);
+    };
+  }, []);
 
   const nextSkill = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === skills.length - 1 ? 0 : prevIndex + 1
+      prevIndex === skills.length - cardsToShow ? 0 : prevIndex + 1
     );
   };
 
   const prevSkill = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? skills.length - 1 : prevIndex - 1
+      prevIndex === 0 ? skills.length - cardsToShow : prevIndex - 1
     );
   };
 
@@ -87,7 +106,7 @@ function Skills() {
     if (!isUserInteracting) {
       const interval = setInterval(() => {
         nextSkill();
-      }, 2000); // Autoplay every 3 seconds
+      }, 3000); // Autoplay every 3 seconds
       return () => clearInterval(interval);
     }
   }, [isUserInteracting, currentIndex]);
@@ -113,24 +132,27 @@ function Skills() {
         </h1>
       </div>
 
-      <div className="relative w-full flex justify-center items-center my-10 overflow-hidden">
+      <div className="relative w-full flex justify-center items-center my-10 overflow-hidden h-[400px]">
         {/* Previous Button */}
         <button
           onClick={prevSkill}
-          className="absolute left-4 md:left-10 lg:left-20 text-lg md:text-2xl bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition flex items-center justify-center"
+          className="absolute z-10 left-8 md:left-12 lg:left-16 text-lg md:text-2xl bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition flex items-center justify-center"
         >
           <img src={PrevIcon} className="w-6 h-6 md:w-8 md:h-8" />
         </button>
 
         {/* Skills Container */}
         <div
-          className="w-full flex justify-center items-center space-x-6 h-[280px] overflow-auto scroll-smooth"
+          className="w-full max-w-screen-lg flex justify-center items-center space-x-6 h-full p-2 overflow-hidden rounded-2xl bg-gradient-to-r "
           style={{ scrollBehavior: "smooth" }}
         >
           {skills
-            .slice(currentIndex, currentIndex + 3)
+            .slice(currentIndex, currentIndex + cardsToShow)
             .concat(
-              skills.slice(0, Math.max(0, currentIndex + 3 - skills.length))
+              skills.slice(
+                0,
+                Math.max(0, currentIndex + cardsToShow - skills.length)
+              )
             )
             .map((skill, index) => (
               <SkillCard
@@ -145,7 +167,7 @@ function Skills() {
         {/* Next Button */}
         <button
           onClick={nextSkill}
-          className="absolute right-4 md:right-10 lg:right-20 text-lg md:text-2xl bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition flex items-center justify-center"
+          className="absolute right-8 md:right-12 lg:right-16 text-lg md:text-2xl bg-gray-300 rounded-full p-2 hover:bg-gray-400 transition flex items-center justify-center"
         >
           <img src={NextIcon} className="w-6 h-6 md:w-8 md:h-8" />
         </button>
@@ -167,7 +189,7 @@ function Skills() {
 }
 
 const SkillCard = ({ Icon, title, description }) => (
-  <div className="h-48 w-72 sm:h-56 lg:h-52 lg:w-72 cursor-pointer box duration-300 rounded-lg shadow-xl shadow-gray-900 bg-gray-800 p-4 text-center flex flex-col justify-center items-center hover:bg-gray-700 hover:scale-105 transition-all">
+  <div className="w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-96 cursor-pointer duration-300 rounded-xl shadow-xl shadow-gray-900 bg-gray-800 p-4 text-center flex flex-col justify-center items-center hover:bg-gray-700 hover:scale-105 transition-all">
     <Icon className="text-4xl md:text-5xl mb-4 text-blue-400" />
     <h1 className="text-lg md:text-xl font-semibold">{title}</h1>
     <p className="text-xs sm:text-sm text-gray-400 mt-2">{description}</p>
