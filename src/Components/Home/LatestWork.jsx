@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BiCircle, BiStar } from "react-icons/bi";
+import { BiCircle, BiStar, BiVideo } from "react-icons/bi";
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/som.jpg";
 import project3 from "../../assets/ordering-system.jpg";
@@ -43,7 +43,7 @@ function LatestWork() {
       id: 1,
       title: "Yokoks Gym ",
       description:
-        "Gym inventory and membership management system built with React.js, Tailwind CSS, and Context API, featuring an intuitive interface for managing equipment, memberships, and administrative tasks.",
+        "Gym inventory and membership management system built with PHP, Tailwind CSS, and Context API, featuring an intuitive interface for managing equipment, memberships, and administrative tasks.",
       img: project1,
       liveLink: "https://lemonchiffon-ape-979463.hostingersite.com/p/L.php",
       features: [
@@ -103,16 +103,30 @@ function LatestWork() {
     <div id="latestwork" className="relative m-auto mt-10 mb-2 rounded-lg">
       <div className="m-auto text-center relative">
         <h1 className="text-3xl md:text-5xl font-semibold py-7 text-white">
-          Latest Work
+          Latest Projects
         </h1>
         <BiStar className="animate-spin text-2xl absolute bottom-0 text-white" />
       </div>
 
       <button
         onClick={navigateToProjects}
-        className="absolute top-5 right-5 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600"
+        className="absolute top-5 right-5 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
       >
         View All Projects
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-4 h-4 ml-2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
       </button>
 
       <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10 text-white" />
@@ -143,9 +157,9 @@ function LatestWork() {
               <div className="flex justify-start items-center my-2">
                 <button
                   onClick={handleOpenModal}
-                  className="btn h-8 w-24  text-sm text-center border-2  border-[rgb(19,118,175)] rounded-[6px] cursor-pointer mr-2"
+                  className="btn h-8 w-24 text-sm text-center border-2  border-[rgb(19,118,175)] hover:bg-black rounded-[6px] cursor-pointer mr-2 flex items-center justify-center"
                 >
-                  View Live
+                  <BiVideo className="mr-2 w-5 h-5" />
                 </button>
                 <button className="btn h-8 w-32  text-sm text-center bg-[rgb(19,118,175)] rounded-[6px] cursor-pointer">
                   View More

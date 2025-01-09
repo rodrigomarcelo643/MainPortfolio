@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BiChevronLeft, BiCircle, BiStar } from "react-icons/bi";
+import { BiChevronLeft, BiCircle, BiStar, BiVideo } from "react-icons/bi";
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/som.jpg";
 import project3 from "../../assets/ordering-system.jpg";
@@ -110,14 +110,14 @@ function Projects() {
             <div className="h-[40%] w-full lg:w-1/2 pl-4 lg:pl-2 text-white">
               <h1 className="text-base font-semibold pb-1">{project.title}</h1>
               <p>{project.description}</p>
-              <div className="flex justify-start items-center my-2">
+              <div className="flex justify-center items-center my-2">
                 <button
                   onClick={() => handleOpenModal(project.id)}
-                  className="btn h-8 w-24  text-sm text-center border-2  border-[rgb(19,118,175)] rounded-[6px] cursor-pointer mr-2"
+                  className="btn h-8 w-24 flex items-center justify-center text-sm text-center border-2 hover:bg-black border-[rgb(19,118,175)] rounded-[6px] cursor-pointer mr-2"
                 >
-                  View Live
+                  <BiVideo className="w-5 h-5" />
                 </button>
-                <button className="btn h-8 w-32  text-sm text-center bg-[rgb(19,118,175)] rounded-[6px] cursor-pointer">
+                <button className="btn h-8 w-32 text-sm text-center bg-[rgb(19,118,175)] rounded-[6px] cursor-pointer">
                   View More
                 </button>
               </div>

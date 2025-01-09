@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid"; // Corrected import
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import menuopen from "../assets/menu_open.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 function Header({ setSideBar }) {
   const [headervalue, setHeaderValue] = useState("home");
   const [isSkillsHovered, setIsSkillsHovered] = useState(false);
+  const navigate = useNavigate();
 
+  function navigateCv() {
+    navigate("/CV");
+  }
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -207,7 +212,10 @@ function Header({ setSideBar }) {
         data-aos-delay="800"
       >
         <a href="" className="h-0 w-0 md:h-auto md:w-auto invisible md:visible">
-          <button className="btn h-0 w-0 md:h-8 md:w-20 lg:h-10 lg:w-28 md:mr-2 md:text-sm lg:text-base font-bold invisible md:visible border-2 border-[rgb(19,118,175)] rounded-full">
+          <button
+            onClick={navigateCv}
+            className="btn h-0 w-0 md:h-8 md:w-20 lg:h-10 lg:w-28 md:mr-2 md:text-sm lg:text-base font-bold invisible md:visible border-2 border-[rgb(19,118,175)] rounded-full"
+          >
             CV
           </button>
         </a>

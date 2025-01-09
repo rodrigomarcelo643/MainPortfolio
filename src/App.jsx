@@ -9,6 +9,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import Home from "./Components/Home/Home";
 import SideBar from "./Components/SideBar";
+import CV from "./Components/CV/CV";
 import Projects from "./Components/Projects/Projects";
 
 function App() {
@@ -27,7 +28,7 @@ function AppRoutes({ sideBar, setSideBar }) {
   return (
     <div className="h-full w-full">
       {/* Conditionally render Header based on the current route */}
-      {location.pathname !== "/my-projects" && (
+      {location.pathname !== "/my-projects" && location.pathname !== "/CV" && (
         <Header sideBar={sideBar} setSideBar={setSideBar} />
       )}
 
@@ -40,12 +41,13 @@ function AppRoutes({ sideBar, setSideBar }) {
         <SideBar sideBar={sideBar} setSideBar={setSideBar} />
       </div>
 
-      {/* Routes (Home, Projects) */}
+      {/* Routes (Home, Projects, CV) */}
       <div className="h-full w-full absolute top-14">
         <Routes>
           <Route path="/" element={<Home />} /> {/* Home Route */}
           <Route path="/my-projects" element={<Projects />} />{" "}
           {/* Projects Route */}
+          <Route path="/CV" element={<CV />} /> {/* CV Route */}
         </Routes>
       </div>
     </div>
