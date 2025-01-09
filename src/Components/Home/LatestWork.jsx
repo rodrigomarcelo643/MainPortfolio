@@ -110,7 +110,7 @@ function LatestWork() {
 
       <button
         onClick={navigateToProjects}
-        className="absolute top-5 right-5 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
+        className="absolute top-15 right-5 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 flex items-center"
       >
         View All Projects
         <svg
@@ -132,7 +132,7 @@ function LatestWork() {
       <BiCircle className="text-5xl animate-pulse absolute bottom-0 right-10 text-white" />
       <BiCircle className="text-4xl animate-pulse absolute bottom-6 right-10 text-white" />
 
-      <div className="min-h-96 w-full xl:w-11/12 m-auto flex flex-wrap justify-between items-start">
+      <div className="min-h-96 w-full xl:w-11/12 m-auto flex  mt-[56px] flex-wrap justify-between items-start">
         {projects.map((project) => (
           <div
             key={project.id}
