@@ -11,9 +11,9 @@ import "aos/dist/aos.css";
 function About() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Duration of the animation
-      easing: "ease-out", // Easing for smooth animation
-      once: false, // Trigger animation every time the element comes into view
+      duration: 1000,
+      easing: "ease-out",
+      once: false,
       offset: 100,
     });
   }, []);

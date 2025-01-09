@@ -211,14 +211,13 @@ function Header({ setSideBar }) {
         data-aos="zoom-in-up"
         data-aos-delay="800"
       >
-        <a href="" className="h-0 w-0 md:h-auto md:w-auto invisible md:visible">
-          <button
-            onClick={navigateCv}
-            className="btn h-0 w-0 md:h-8 md:w-20 lg:h-10 lg:w-28 md:mr-2 md:text-sm lg:text-base font-bold invisible md:visible border-2 border-[rgb(19,118,175)] rounded-full"
-          >
-            CV
-          </button>
-        </a>
+        <button
+          onClick={navigateCv}
+          className="btn h-0 w-0 md:h-8 md:w-20 lg:h-10 lg:w-28 md:mr-2 md:text-sm lg:text-base font-bold invisible md:visible border-2 border-[rgb(19,118,175)] rounded-full"
+        >
+          CV
+        </button>
+
         <Link
           to="contact"
           smooth={true}

@@ -106,7 +106,7 @@ function Skills() {
     if (!isUserInteracting) {
       const interval = setInterval(() => {
         nextSkill();
-      }, 3000); // Autoplay every 3 seconds
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [isUserInteracting, currentIndex]);
@@ -115,7 +115,7 @@ function Skills() {
     setIsUserInteracting(true);
     const timer = setTimeout(() => {
       setIsUserInteracting(false);
-    }, 5000); // Resume autoplay after 5 seconds of inactivity
+    }, 5000);
     return () => clearTimeout(timer);
   };
 
