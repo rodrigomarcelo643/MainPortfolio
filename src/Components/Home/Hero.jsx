@@ -37,7 +37,7 @@ function Hero() {
             className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl mt-2"
             style={{ whiteSpace: "nowrap" }}
           >
-            Android and Web Developer
+            App and Web Developer
           </span>
         </h1>
         <p className="text-sm md:w-10/12 m-auto lg:w-auto text-gray-400">
