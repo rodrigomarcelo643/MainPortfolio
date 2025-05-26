@@ -39,8 +39,8 @@ const CVTop = React.forwardRef((props, ref) => (
     </h2>
     <hr className="border-t-1 border-gray-500 mb-2" />
     <p className="mb-4 text-sm text-gray-700">
-      Motivated second-year BSIT student at Southwestern University Phinma,
-      skilled in React.js, PHP, Node.js, and Android development with Java and
+      Graduate at Southwestern University Phinma,
+      skilled in React.js, PHP, Node.js, Laravel and Android development with Java and
       Kotlin. Passionate about creating dynamic, responsive web and mobile apps,
       with a focus on continuous learning and team collaboration.
     </p>
