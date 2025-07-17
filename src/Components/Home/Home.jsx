@@ -5,6 +5,7 @@ import LatestWork from "./LatestWork";
 import Contact from "./Contact";
 import About from "./About";
 import Skills from "./Skills";
+import Tools from "./Tools"
 import { useState } from "react";
 
 function Home({ setHeaderValue }) {
@@ -35,24 +36,27 @@ function Home({ setHeaderValue }) {
   }, [setHeaderValue]);
 
   return (
-    <div className="fullbackgroundcolor px-4 xl:px-12 relative">
-      <section id="home">
+    <div className="fullbackgroundcolor  relative">
+      <section className="px-4 xl:px-12" id="home">
         <Hero />
       </section>
-      <section id="aboutus">
+      <section className="px-4 xl:px-12"  id="aboutus">
         <About />
       </section>
-      <section id="skills">
+        <section className="px-0 xl:px-0"  id="tools">
+        <Tools />
+      </section>
+      <section className="px-4 xl:px-12" id="skills">
         <Skills />
       </section>
-      <section id="latestwork">
+      <section className="px-4 xl:px-12"  id="latestwork">
         <LatestWork />
       </section>
 
-      <section id="contact">
+      <section  className="px-4 xl:px-12" id="contact">
         <Contact />
       </section>
-      <Footer />
+      <Footer className="px-4 xl:px-12"  />
     </div>
   );
 }

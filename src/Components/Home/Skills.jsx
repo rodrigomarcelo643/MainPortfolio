@@ -122,12 +122,12 @@ function Skills() {
   return (
     <div
       id="skills"
-      className="h-full w-full mt-20 md:mt-6 lg:mt-2 text-white"
+      className="h-full w-full mt-10 md:mt-6 lg:mt-2 text-white"
       onMouseMove={handleUserInteraction}
       onTouchStart={handleUserInteraction}
     >
       <div className="relative">
-        <h1 className="text-4xl md:text-6xl text-center mt-20 font-bold">
+        <h1 className="text-4xl md:text-6xl text-center mt-6 font-bold">
           Skills
         </h1>
       </div>

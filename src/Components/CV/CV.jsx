@@ -1,16 +1,16 @@
 import React, { useRef } from "react";
 import html2pdf from "html2pdf.js";
-import { HiChevronLeft } from "react-icons/hi"; // Importing Chevron icon
+import { HiChevronLeft } from "react-icons/hi";
 
 const CVTop = React.forwardRef((props, ref) => (
   <div
     ref={ref}
-    className="CV-content p-6 font-sans leading-relaxed max-w-4xl mx-auto bg-white text-black shadow-lg border border-gray-200 rounded-lg"
+    className="CV-content py-[0.5cm] px-[1.5cm] w-[210mm] min-h-[297mm] max-w-4xl mx-auto font-sans text-[12px] leading-tight bg-white text-gray-800"
   >
-    <h1 className="text-center text-4xl font-bold mb-4 text-gray-900">
-      Marcelo G. Rodrigo
+    <h1 className="text-center text-2xl font-bold mb-2 text-gray-900">
+      MARCELO G. RODRIGO
     </h1>
-    <p className="text-center text-sm mb-8 text-gray-600">
+    <p className="text-center text-xs mb-4 text-gray-600">
       <span>Email:</span> <strong>rodrigomarcelo643@gmail.com</strong> |{" "}
       <span>Phone:</span> <strong>09533341454</strong>
       <br />
@@ -19,107 +19,130 @@ const CVTop = React.forwardRef((props, ref) => (
         href="https://www.linkedin.com/in/marcelo-rodrigo-205100295/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-600 hover:underline"
+        className="text-blue-600"
       >
-        https://www.linkedin.com/in/marcelo-rodrigo-205100295/
+        linkedin.com/in/marcelo-rodrigo
       </a>{" "}
       | <span>GitHub:</span>{" "}
       <a
         href="https://github.com/rodrigomarcelo643"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-600 hover:underline"
+        className="text-blue-600"
       >
-        https://github.com/rodrigomarcelo643
+        github.com/rodrigomarcelo643
       </a>
     </p>
 
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
       Professional Summary
     </h2>
-    <hr className="border-t-1 border-gray-500 mb-2" />
-    <p className="mb-4 text-sm text-gray-700">
-      Graduate at Southwestern University Phinma, skilled in React.js, PHP,
-      Node.js, Laravel and Android development with Java and Kotlin. Passionate
-      about creating dynamic, responsive web and mobile apps, with a focus on
-      continuous learning and team collaboration.
-    </p>
+<p className="mb-4 text-[13px] text-justify text-gray-700">
+  Third-year BS IT student at Southwestern University PHINMA with 1+ years of freelance full-stack experience. 
+  Skilled in React, Node.js, PHP/Laravel for web development and Java/Kotlin for Android apps. Passionate about 
+  building user-centric applications and continuous learning. Team player with both academic and client project experience.
+</p>
 
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Skills</h2>
-    <hr className="border-t-1 border-gray-500 mb-2" />
-    <ul className="list-disc pl-5 mb-4 text-sm text-gray-700">
-      <li>
-        <strong>Frontend:</strong> HTML5, CSS3, JavaScript, React.js
-      </li>
-      <li>
-        <strong>Backend:</strong> PHP, Node.js, Laravel
-      </li>
-      <li>
-        <strong>Database:</strong> MySQL, Firebase
-      </li>
-      <li>
-        <strong>Tools:</strong> Git, Github, VS Code, Postman, Docker
-      </li>
-      <li>
-        <strong>Android Development:</strong> Java, Kotlin, Android Studio
-      </li>
-      <li>
-        <strong>Other:</strong> Problem-solving, Agile Methodology
-      </li>
-    </ul>
-
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Education</h2>
-    <hr className="border-t-1 border-gray-500 mb-2" />
-    <div className="mb-4 text-sm text-gray-700">
-      <p>
-        <strong>BS in Information Technology (BSIT)</strong>
-        <br />
-        Southwestern University –Phinma
-        <br />
-      </p>
-      <p className="mt-4">
-        <strong>High School Diploma</strong>
-        <br />
-        Caliongan National High School - Cebu, Philippines
-        <br />
-        <em>Graduation: SY 2023-2024</em>
-      </p>
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Technical Skills
+    </h2>
+    <div className="grid grid-cols-2 gap-x-4 gap-y-1 mb-3">
+      <div>
+        <p><strong>Frontend:</strong> React, TypeScript, Tailwind CSS</p>
+      </div>
+      <div>
+        <p><strong>Backend:</strong> Node.js, Express, PHP, Laravel</p>
+      </div>
+      <div>
+        <p><strong>Mobile:</strong> Android (Java/Kotlin), React Native</p>
+      </div>
+      <div>
+        <p><strong>Database:</strong> MySQL, Firebase, MongoDB</p>
+      </div>
+      <div>
+        <p><strong>Tools:</strong> Git, VS Code, Postman</p>
+      </div>
+      <div>
+        <p><strong>Methodologies:</strong> Agile, REST APIs</p>
+      </div>
     </div>
 
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Projects</h2>
-    <hr className="border-t-1 border-gray-500 mb-2" />
-    <ul className="list-disc pl-5 mb-6 text-sm text-gray-700">
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Professional Experience
+    </h2>
+
+    {/* Freelance Developer */}
+    <div className="mb-4">
+      <div className="flex justify-between">
+        <p><strong>Freelance Full-Stack Developer</strong></p>
+        <p className="text-gray-600">Dec 2023 – Present</p>
+      </div>
+      <ul className="list-disc pl-5 mt-1 space-y-1">
+        <li>Designed and developed 3+ full-stack applications using modern web technologies</li>
+        <li>Improved user experience by creating responsive UIs that increased client conversion rates by 30%</li>
+        <li>Collaborated with clients to translate business requirements into technical solutions</li>
+      </ul>
+    </div>
+
+    {/* Working Scholar */}
+    <div className="mb-4">
+      <div className="flex justify-between">
+        <p><strong>Working Scholar – Southwestern University PHINMA</strong></p>
+        <p className="text-gray-600">July 2023 – Present</p>
+      </div>
+      <ul className="list-disc pl-5 mt-1 space-y-1">
+        <li>Streamlined document processing and student service coordination for administrative offices</li>
+        <li>Demonstrated strong time management and professionalism in fast-paced academic environment</li>
+      </ul>
+    </div>
+
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Education
+    </h2>
+    <div className="mb-4">
+      <div className="flex justify-between">
+        <p>
+          <strong>BS in Information Technology (BSIT)</strong>
+          <br />
+          Southwestern University PHINMA | Expected Graduation: 2027
+        </p>
+      </div>
+    </div>
+
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Projects
+    </h2>
+    <ul className="list-disc pl-5 mb-3 space-y-3">
       <li>
-        <strong>Balaga Unit (Ongoing):</strong> A responsive app built with
-        React.js and Tailwind CSS for apartment booking and tenant-landlord
-        chat.
+        <strong>Balaga Unit:</strong> Designed and implemented an apartment management system with React, 
+        Node.js, and MySQL featuring booking system, payment processing, and real-time chat (2024)
       </li>
       <li>
-        <strong>Yokoks Gym:</strong> Gym management system using PHP, Tailwind
-        CSS, and Context API for inventory and membership management.
+        <strong>MSIS:</strong> Developed comprehensive student records system using Laravel, TypeScript, 
+        and MySQL with secure admin/student portals (2025)
       </li>
       <li>
-        <strong>MSIS:</strong> System for managing student records, with file
-        uploads, grade sheets, and announcements.
-      </li>
-      <li>
-        <strong>Ordering System:</strong> Java-based system for order placements
-        and admin management with a user-friendly GUI.
+        <strong>Yokoks Gym:</strong> Built gym management system with PHP and Tailwind CSS featuring 
+        member tracking and inventory management modules (2024)
       </li>
     </ul>
 
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">Languages</h2>
-    <hr className="border-t-1 border-gray-500 mb-2" />
-    <ul className="list-disc pl-5 mb-4 text-sm text-gray-700">
-      <li>
-        <strong>Bisaya:</strong> Fluent
-      </li>
-      <li>
-        <strong>English:</strong> Proficient
-      </li>
-      <li>
-        <strong>Tagalog:</strong> Basic
-      </li>
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Hackathons & Achievements
+    </h2>
+    <ul className="list-disc pl-5 mb-3 space-y-1">
+      <li><strong>SWU Mini-Hackathon 2024:</strong> Designed and prototyped a school learning management system</li>
+      <li><strong>Can You HackIT 2025:</strong> Created Herizon AI, an business educational AI assistant platform</li>
+      <li><strong>Dean's Lister:</strong> Achieved academic honors for 2 consecutive semesters</li>
+    </ul>
+
+    <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
+      Languages
+    </h2>
+    <ul className="list-disc pl-5 space-y-1">
+      <li><strong>English:</strong> Professional working proficiency</li>
+      <li><strong>Bisaya:</strong> Native proficiency</li>
+      <li><strong>Tagalog:</strong> Basic communication</li>
     </ul>
   </div>
 ));
@@ -130,14 +153,18 @@ const CV = () => {
   const handleDownloadPDF = () => {
     const element = componentRef.current;
     const options = {
-      filename: "Marcelo_G_Rodrigo_CV.pdf",
-      html2canvas: { scale: 2 },
-      jsPDF: {
-        unit: "in",
-        format: "letter",
-        orientation: "portrait",
-        margin: [0.5, 0.5, 0.5, 0.5],
+      filename: "Marcelo_Rodrigo_CV.pdf",
+      html2canvas: { 
+        scale: 2,
+        letterRendering: true,
+        useCORS: true
       },
+      jsPDF: {
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+        margin: [10, 10, 10, 10]
+      }
     };
     html2pdf().from(element).set(options).save();
   };
@@ -147,19 +174,19 @@ const CV = () => {
   };
 
   return (
-    <div className="m-4 mt-[-40px]">
+    <div className="m-4">
       <div className="flex justify-between mb-4">
         <button
           onClick={goBackToPortfolio}
-          className="px-5 py-2  border-2  border-[rgb(19,118,175)] hover:bg-gray-200  hover:text-black text-md font-medium rounded-full flex items-center gap-2 text-white  transition-all"
+          className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md flex items-center gap-1 hover:bg-blue-50 transition-colors"
         >
-          <HiChevronLeft className="text-xl" /> Back
+          <HiChevronLeft /> Back
         </button>
         <button
           onClick={handleDownloadPDF}
-          className="px-5 py-2 bg-blue-600 text-white text-md font-medium rounded-full hover:bg-blue-700 transition-all"
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
         >
-          Download CV as PDF
+          Download PDF CV
         </button>
       </div>
       <CVTop ref={componentRef} />
