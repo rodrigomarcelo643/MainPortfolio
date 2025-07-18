@@ -22,7 +22,7 @@ import { SiTailwindcss, SiFirebase, SiExpo, SiOpenai, SiLaravel, SiTypescript } 
 import project1 from "../../assets/project1.png";
 import project2 from "../../assets/msis.png";
 import project3 from "../../assets/ordering-system.jpg";
-import project4 from "../../assets/balaga.jpg";
+import project4 from "../../assets/bean-byte.png";
 import project5 from "../../assets/herizon-ai.png";
 import project6 from "../../assets/yofit-app.png";
 import project7 from "../../assets/marketmate.png";
