@@ -23,6 +23,7 @@ import project1 from "../../assets/project1.png";
 import project2 from "../../assets/msis.png";
 import project3 from "../../assets/ordering-system.jpg";
 import project4 from "../../assets/bean-byte.png";
+import balaga from "../../assets/balaga.jpg";
 import project5 from "../../assets/herizon-ai.png";
 import project6 from "../../assets/yofit-app.png";
 import project7 from "../../assets/marketmate.png";
@@ -100,7 +101,7 @@ function Projects() {
         id: 4,
         title: "Balaga Unit",
         description: "Apartment Management System.",
-        img: project4,
+        img: balaga,
         liveLink: "https://balaga-unit-iof9.vercel.app",
         repoLink: "#",
         features: [
