@@ -38,7 +38,7 @@ const CVTop = React.forwardRef((props, ref) => (
       Professional Summary
     </h2>
 <p className="mb-4 text-[13px] text-justify text-gray-700">
-  Third-year BS IT student at Southwestern University PHINMA with 1+ years of freelance full-stack experience. 
+  Third-year BSIT student at Southwestern University PHINMA with 1+ years of freelance full-stack experience. 
   Skilled in React, Node.js, PHP/Laravel for web development and Java/Kotlin for Android apps. Passionate about 
   building user-centric applications and continuous learning. Team player with both academic and client project experience.
 </p>
@@ -133,7 +133,7 @@ const CVTop = React.forwardRef((props, ref) => (
     <ul className="list-disc pl-5 mb-3 space-y-1">
       <li><strong>SWU Mini-Hackathon 2024:</strong> Designed and prototyped a school learning management system</li>
       <li><strong>Can You HackIT 2025:</strong> Created Herizon AI, an business educational AI assistant platform</li>
-      <li><strong>Dean's Lister:</strong> Achieved academic honors for 2 consecutive semesters</li>
+      <li><strong>Dean's Lister:</strong> Achieved academic honors </li>
     </ul>
 
     <h2 className="text-lg font-semibold my-4 pb-2 text-gray-800 border-b-2 border-gray-300 uppercase">
