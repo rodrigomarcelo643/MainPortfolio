@@ -76,7 +76,7 @@ function LatestWork() {
       title: "MSIS - Management",
       description: "Student requirements management system.",
       img: project2,
-      liveLink: "",
+      liveLink: "https://msis-demo.scarlet2.io/login",
       repoLink: "#",
       features: [
         "File upload and organization",
